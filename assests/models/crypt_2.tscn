@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbjd645nx0pwj"]
+
+[ext_resource type="PackedScene" uid="uid://c3x7ppfh2mtlf" path="res://assests/models/crypt.glb" id="1_x1ghi"]
+
+[node name="crypt2" instance=ExtResource("1_x1ghi")]
+
+[node name="crypt" parent="." index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)

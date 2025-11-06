@@ -1,0 +1,210 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccin4kq5u1via"]
+
+[ext_resource type="VideoStream" path="res://scenes/5422501-hd_1920_1080_25fps.ogv" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://dfmwlk8c0wvvx" path="res://scripts/ui.gd" id="1_ro3t7"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ro3t7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 6
+
+[node name="BackgroundVideo" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("1_dj8aq")
+autoplay = true
+expand = true
+loop = true
+
+[node name="StartMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="head" type="MarginContainer" parent="StartMenu"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="Title" type="Label" parent="StartMenu/head"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 200
+text = "Start Menu"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="StartMenu/head"]
+z_index = 10
+custom_minimum_size = Vector2(500, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 75
+text = "READYYY!!"
+
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
+custom_minimum_size = Vector2(500, 540)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu/MarginContainer"]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="StartMenu/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "Player 1 Name "
+
+[node name="P1Name" type="LineEdit" parent="StartMenu/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+placeholder_text = "P1 Name"
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="StartMenu/MarginContainer"]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="P2Name" type="LineEdit" parent="StartMenu/MarginContainer/MarginContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+placeholder_text = "P2 Name"
+alignment = 1
+
+[node name="Label2" type="Label" parent="StartMenu/MarginContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "Player 2 Name "
+
+[node name="HUD" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+
+[node name="TopBar" type="MarginContainer" parent="HUD"]
+custom_minimum_size = Vector2(1920, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 0
+
+[node name="IDK" type="Label" parent="HUD/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Player 1 ❤️x5 | Kills: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="HUD/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="P2Label" type="Label" parent="HUD/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Player 2 ❤️x5 | Kills: 0"
+vertical_alignment = 1
+
+[node name="CountDown" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 780.0
+offset_top = 400.0
+offset_right = 960.0
+offset_bottom = 537.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.7607843, 0.6117647, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinScreen" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WinScreen"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+
+[node name="WinnerLabel" type="Label" parent="WinScreen/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.96566695, 0, 0.38082072, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6156863)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 200
+text = "Player 1 Wins !"
+horizontal_alignment = 1
+
+[node name="Rematch" type="Button" parent="WinScreen/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 100
+text = "Rematch"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.41568628, 0.16470589, 0.09803922, 0.22352941)

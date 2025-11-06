@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://begdultji1v2i"]
+
+[ext_resource type="PackedScene" uid="uid://2jm5n6eh726a" path="res://weapons/Steampunk Rifle.glb" id="1_rma5x"]
+
+[sub_resource type="Animation" id="Animation_whh4i"]
+resource_name = "shoot"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.00029999999, 0.01, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.4216007, -0.2373054, -0.57112384), Vector3(0.4216007, -0.2373054, -0.57112384), Vector3(0.4216007, -0.2373054, -0.57112384), Vector3(0.4216007, -0.2373054, -0.57112384), Vector3(0.422, -0.237, 0.05), Vector3(0.4216007, -0.2373054, -0.57112384)]
+}
+
+[sub_resource type="Animation" id="Animation_71i6y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4216007, -0.2373054, -0.57112384)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3f6h1"]
+_data = {
+&"RESET": SubResource("Animation_71i6y"),
+&"shoot": SubResource("Animation_whh4i")
+}
+
+[node name="weapon" instance=ExtResource("1_rma5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4216007, -0.2373054, -0.57112384)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_3f6h1")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, -0.09513347, -0.9954646, 0, 0.9954646, -0.09513347, 0, 0, -0.5447712)

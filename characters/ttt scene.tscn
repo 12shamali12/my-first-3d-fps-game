@@ -1,0 +1,80 @@
+[gd_scene load_steps=21 format=3 uid="uid://ir5u28gpr7tj"]
+
+[ext_resource type="PackedScene" uid="uid://d101omk5jhnrs" path="res://cac-1762325221493.gltf" id="1_txh7j"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fvq37"]
+animation = &"FallingBackDeath"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wx00"]
+animation = &"Gunplay"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g8pne"]
+animation = &"BigJump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bx0i6"]
+animation = &"RunForward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3aqtk"]
+animation = &"Walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tqeam"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gpgya"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f6cp3"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j5cn7"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_erlwp"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iermr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_heq7g"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3dvea"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pedx3"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_va1f5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q3xka"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hk3gv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8btwx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c7inc"]
+states/End/position = Vector2(1106.4, 133.6)
+states/FallingBackDeath/node = SubResource("AnimationNodeAnimation_fvq37")
+states/FallingBackDeath/position = Vector2(733.60004, 149.2)
+states/gunplay/node = SubResource("AnimationNodeAnimation_6wx00")
+states/gunplay/position = Vector2(504, 124.4)
+states/jump/node = SubResource("AnimationNodeAnimation_g8pne")
+states/jump/position = Vector2(713.6, 50)
+states/run/node = SubResource("AnimationNodeAnimation_bx0i6")
+states/run/position = Vector2(369.6, 177.2)
+states/walk/node = SubResource("AnimationNodeAnimation_3aqtk")
+states/walk/position = Vector2(381.6, 19.600002)
+transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_tqeam"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_gpgya"), "walk", "gunplay", SubResource("AnimationNodeStateMachineTransition_f6cp3"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_j5cn7"), "run", "gunplay", SubResource("AnimationNodeStateMachineTransition_erlwp"), "gunplay", "run", SubResource("AnimationNodeStateMachineTransition_iermr"), "gunplay", "walk", SubResource("AnimationNodeStateMachineTransition_heq7g"), "gunplay", "jump", SubResource("AnimationNodeStateMachineTransition_3dvea"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_pedx3"), "jump", "gunplay", SubResource("AnimationNodeStateMachineTransition_va1f5"), "jump", "FallingBackDeath", SubResource("AnimationNodeStateMachineTransition_q3xka"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_hk3gv"), "FallingBackDeath", "End", SubResource("AnimationNodeStateMachineTransition_8btwx")]
+
+[node name="AuxScene" instance=ExtResource("1_txh7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 98.88171, 0)
+
+[node name="AnimationTree1" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_c7inc")
+anim_player = NodePath("../AnimationPlayer")

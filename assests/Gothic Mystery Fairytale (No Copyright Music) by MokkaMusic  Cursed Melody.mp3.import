@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c47tt74u2ekj3"
+path="res://.godot/imported/Gothic Mystery Fairytale (No Copyright Music) by MokkaMusic  Cursed Melody.mp3-2dea5b83a2f831a8937d6f8e0c2983e2.mp3str"
+
+[deps]
+
+source_file="res://assests/Gothic Mystery Fairytale (No Copyright Music) by MokkaMusic  Cursed Melody.mp3"
+dest_files=["res://.godot/imported/Gothic Mystery Fairytale (No Copyright Music) by MokkaMusic  Cursed Melody.mp3-2dea5b83a2f831a8937d6f8e0c2983e2.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
