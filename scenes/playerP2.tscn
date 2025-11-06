@@ -16,29 +16,29 @@ initial_velocity_max = 5.0
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="player2" type="CharacterBody3D"]
+floor_max_angle = 1.3089969
 script = ExtResource("1_rdwpw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.454, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2191436, -0.01340425)
 shape = SubResource("ConvexPolygonShape3D_i5yjo")
-disabled = true
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2239685, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2239685, -0.010215104, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2180235, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.088652134, 1.8117719, 0)
 
 [node name="rifle" parent="Head/Camera3D" instance=ExtResource("2_0v0f1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.422, -0.23738241, -0.61355513)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21113952, 1.4540856, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21113952, 1.2508659, 0)
 mesh = SubResource("CapsuleMesh_mwbma")
 skeleton = NodePath("")
 
 [node name="DeathParticles44" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524425, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4015083, 0)
 emitting = false
 amount = 50
 lifetime = 1.5

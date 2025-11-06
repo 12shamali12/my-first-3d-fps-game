@@ -33,7 +33,7 @@ var _spawn_points: Array[Node3D] = []
 # ===== Signals =====
 signal hit(player_id)
 signal killed(killer_id)
-
+signal respawned(player_id)
 # ===== Nodes =====
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -195,6 +195,7 @@ func _die() -> void:
 
 func _respawn() -> void:
 	health = max_health
+	emit_signal("respawned",1)
 	$Head/AuxScene2.visible=true
 	#$Head/AuxScene2/Camera3D/rifle/Node2.visible=true 
 	$CollisionShape3D.disabled = false
@@ -215,6 +216,6 @@ func add_kill() -> void:
 func _travel_if_exists(state_name: String) -> void:
 	if playback:
 		# avoid errors if state missing
-		var states: Array = anim_tree.get("parameters/State/nodes")
+		#var states: Array = anim_tree.get("parameters/State/nodes")
 		# 'nodes' exists only in editor; at runtime we just try-catch with travel
 		playback.travel(state_name)

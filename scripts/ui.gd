@@ -108,6 +108,7 @@ func reset_hearts(player: int) -> void:
 	elif player == 2:
 		p2_hearts = 5
 	_update_hud()
+	
 
 func _check_win() -> void:
 	if p1_kills >= 3 or p2_kills >= 3:

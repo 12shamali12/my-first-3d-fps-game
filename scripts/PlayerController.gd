@@ -29,6 +29,7 @@ var _spawn_points: Array[Node3D] = []
 
 signal hit(player_id)
 signal killed(killer_id)
+signal respawned(player_id)
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -162,8 +163,8 @@ func set_last_attacker(attacker: Node) -> void:
 func _die() -> void:
 	#_travel_if_exists("fallingBackDeath")
 	$CollisionShape3D.disabled = true
-	#$Head/MeshInstance3D.visible = false
-	#$Head/Camera3D/rifle/Node2.visible = false
+	$Head/MeshInstance3D.visible = false
+	$Head/Camera3D/rifle/Node2.visible = false
 	set_process(false)
 
 	if death_particles:
@@ -180,11 +181,11 @@ func _die() -> void:
 	_respawn()
 
 func _respawn() -> void:
-	health = max_health
-#	$UI._update_hud()
+	health = max_health	
+	emit_signal("respawned",2)
 	$CollisionShape3D.disabled = false
-	#$Head/MeshInstance3D.visible = true
-	#$Head/Camera3D/rifle/Node2.visible = true
+	$Head/MeshInstance3D.visible = true
+	$Head/Camera3D/rifle/Node2.visible = true
 	set_process(true)
 	if _spawn_points.size() > 0:
 		var sp := _spawn_points[randi() % _spawn_points.size()]
