@@ -4284,7 +4284,7 @@ script = ExtResource("18_8bvd1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.889158)
 
 [node name="SP1" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8356743, 0, 43.51314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.436388, 0, 37.818886)
 
 [node name="SP2" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.275818, 0, 36.961163)
