@@ -4,7 +4,7 @@ extends CharacterBody3D
 const SPEED := 6.0
 const SPRINT_MULT := 1.8
 const JUMP_VELOCITY := 5.5
-@export var mouse_sens := 0.01
+@export var mouse_sens := 0.002
 var gravity := 9.8
 
 # ===== Bob tuning (optional) =====

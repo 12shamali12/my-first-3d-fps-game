@@ -5,7 +5,7 @@ extends CharacterBody3D
 const SPEED := 6.0
 const SPRINT_MULT := 1.8
 const JUMP_VELOCITY := 5.5
-const SENS := 2.0
+const SENS := 3.0
 var gravity := 9.8
 
 @export var walk_bob_frequency := 6.0
@@ -184,7 +184,7 @@ func _respawn() -> void:
 	health = max_health	
 	emit_signal("respawned",2)
 	$CollisionShape3D.disabled = false
-	$Head/MeshInstance3D.visible = true
+	#$Head/MeshInstance3D.visible = true
 	$Head/Camera3D/rifle/Node2.visible = true
 	set_process(true)
 	if _spawn_points.size() > 0:
